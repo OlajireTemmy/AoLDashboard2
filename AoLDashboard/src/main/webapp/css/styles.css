@@ -1,0 +1,568 @@
+/* 	
+	1  : Unchecked
+	/1 : DONE
+	/!1: Need Review
+	-1 : No Style Needed
+	R1 : RESUME checking this file
+	
+	//1. index.jsp		/12. import.jsp
+	//2. register.jsp	/13. upload.jsp
+	//3. checkrego.jsp	/14. nominate_units.jsp
+	//4. activate.jsp	/15. show_units4review.jsp
+	-5. home.jsp		/16. allocate_stakeholders.jsp
+	//6. lt.jsp			/17. show_stakeholders.jsp
+	/7. dh.jsp			/18. upload_assessments.jsp
+	/8. nlic.jsp		/19. show_assessments.jsp
+	/9. pr.jsp			/20. download_assessments.jsp
+	/10. password.jsp	/21. check_assessments.jsp
+	-11. logout.jsp		-22. process_assessments.jsp
+						/23. show_approved.jsp
+						/24. error.jsp
+						25. update_columns.jsp		*/
+
+@charset "UTF-8";
+
+/* selectors */
+/* all the JSP files */
+body {
+	margin: 0%;
+	font-family: Calibri, Helvetica, sans-serif;
+	font-size: 1em; /* 1em = 16px (em is a length unit for font-related properties)*/
+	color: #333333;
+	background-color: LightCyan;
+	-webkit-user-select: none;
+	/* Also define the standard property 'user-select' for compatibility
+		'user-select' does not work with safari */
+}
+
+/*
+3. checkrego.jsp
+4. activate.jsp	
+16. allocate_stakeholders.jsp
+18. upload_assessments.jsp
+20. download_assessments.jsp
+23. show_approved.jsp
+24. error.jsp
+*/
+h1 {
+	font-size: 1.5em;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	/* color: #3c1a50; */
+	/* background-color: #3c1a50; */
+}
+
+/*
+1. index.jsp
+2. register.jsp
+3. checkrego.jsp
+10. password.jsp
+13. upload.jsp
+14. nominate_units.jsp
+16. allocate_stakeholders.jsp
+18. upload_assessments.jsp
+19. show_assessments.jsp
+20. download_assessments.jsp
+23. show_approved.jsp
+25. update_columns.jsp
+*/
+h2 {
+	display: block;
+	width: 100%;
+	padding: 10px;
+}
+
+/*
+1. index.jsp
+2. register.jsp
+3. checkrego.jsp
+4. activate.jsp
+6. lt.jsp
+7. dh.jsp
+8. nlic.jsp
+9. pr.jsp
+10. password.jsp
+12. import.jsp
+13. upload.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+16. allocate_stakeholders.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+19. show_assessments.jsp
+20. download_assessments.jsp
+21. check_assessments.jsp
+23. show_approved.jsp
+25. update_columns.jsp
+*/
+header > h1 { /* Every JSP file having an output part has this style to display "Peer Review of Assessment Workflow System" at the top */
+	font-size: 2em;
+	color: snow; /* #F0FFFF(Azure), #FFFAFA(Snow) */
+	background-color: #3c1a50; /* the same colour as the one in ACU website */
+	width: 100%;
+	margin-top: 0%;
+}
+
+/*
+2. register.jsp
+6. lt.jsp
+7. dh.jsp
+8. nlic.jsp
+9. pr.jsp
+10. password.jsp
+12. import.jsp
+15. show_units4review.jsp
+17. show_stakeholders.jsp
+*/
+header > h2 {
+	display: block;
+	width: 100%;
+	padding-left: 10px;
+	padding-top: 5px;
+}
+
+
+
+/*
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+10. password.jsp
+12. import.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+20. download_assessments.jsp
+23. show_approved.jsp
+*/
+form {
+	border: 3px solid #f1f1f1;
+}
+
+/*
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+10. password.jsp
+12. import.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+20. download_assessments.jsp
+23. show_approved.jsp
+*/
+.container {
+	padding: 25px;
+	background-color: lightblue;
+}
+
+/*
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+10. password.jsp
+21. check_assessments.jsp
+*/
+label {
+	cursor: pointer;
+}
+
+/*
+2. register.jsp
+*/
+fieldset {
+	border-radius: 6px;
+}
+
+
+
+
+/* input */
+/*
+1. index.jsp
+2. register.jsp
+10. password.jsp
+12. import.jsp
+21. check_assessments.jsp
+*/
+input {
+	font-size: 1em;
+	cursor: pointer;
+	vertical-align: baseline;
+}
+
+/*
+1. index.jsp
+2. register.jsp
+10. password.jsp
+*/
+input[type=text], input[type=password] {
+	width: 100%;
+	margin: 1%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 2px solid green;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/*
+18. upload_assessments.jsp
+21. check_assessments.jsp
+*/
+.btn_upload {
+	font-size: 1em; /* Checked */
+	width: 50%; /* Checked */
+	padding: 15px; /* Checked */
+	margin: 10px; /* Checked */
+	border: 2px solid #3c1a50; /* Checked */
+	border-radius: 6px; /* Checked */
+	cursor: pointer; /* Checked */
+	color: #3c1a50; /* Checked */
+	background-color: snow; /* Checked */
+}
+
+.btn_upload:hover {
+		color: snow; /* Checked */
+	background-color: #3c1a50; /* Checked */
+	cursor: pointer; /* Checked */
+}
+
+
+/* buttons */
+/*
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+6. lt.jsp
+7. dh.jsp
+8. nlic.jsp
+9. pr.jsp
+10. password.jsp
+12. import.jsp
+13. upload.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+16. allocate_stakeholders.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+19. show_assessments.jsp
+20. download_assessments.jsp
+21. check_assessments.jsp
+23. show_approved.jsp
+24. error.jsp
+25. update_columns.jsp
+*/
+button {
+	font-size: 1em; /* Checked */
+	width: 50%; /* Checked */
+	padding: 15px; /* Checked */
+	margin: 10px; /* Checked */
+	border: 2px solid #3c1a50; /* Checked */
+	border-radius: 6px; /* Checked */
+	cursor: pointer; /* Checked */
+	color: #3c1a50; /* Checked */
+	background-color: snow; /* Checked */
+}
+
+/*
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+6. lt.jsp
+7. dh.jsp
+8. nlic.jsp
+9. pr.jsp
+10. password.jsp
+12. import.jsp
+13. upload.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+16. allocate_stakeholders.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+19. show_assessments.jsp
+20. download_assessments.jsp
+21. check_assessments.jsp
+23. show_approved.jsp
+24. error.jsp
+25. update_columns.jsp
+*/
+button:hover {
+	color: snow; /* Checked */
+	background-color: #3c1a50; /* Checked */
+}
+
+/*
+10. password.jsp
+12. import.jsp
+13. upload.jsp
+14. nominate_units.jsp
+15. show_units4review.jsp
+16. allocate_stakeholders.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+19. show_assessments.jsp
+20. download_assessments.jsp
+21. check_assessments.jsp
+23. show_approved.jsp
+24. error.jsp
+25. update_columns.jsp
+*/
+#backtohome {
+	width: 30%; /* Checked */
+	padding: 10px; /* Checked */
+}
+
+
+/* [CHECKED on 21Apr2022]
+1. index.jsp
+2. register.jsp
+10. password.jsp
+12. import.jsp
+14. nominate_units.jsp
+
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+21. check_assessments.jsp
+*/
+#btn_submit {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+/*
+16. allocate_stakeholders.jsp   WHY IS NOT IT APPLIED??
+*/
+.btn_submit {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+/* [CHECKED on 21Apr2022]
+1. index.jsp
+2. register.jsp
+4. activate.jsp
+*/
+#btn_sign_up_or_sign_in {
+	width: auto; /* the class selector is prioritised over (normal) selectors */
+	padding: 10px 18px;
+	margin: 10px 5px;
+}
+
+
+
+
+/*
+14. nominate_units.jsp
+15. show_units4review.jsp
+16. allocate_stakeholders.jsp
+17. show_stakeholders.jsp
+18. upload_assessments.jsp
+20. download_assessments.jsp
+21. check_assessments.jsp
+23. show_approved.jsp
+*/
+table {
+  	width: 100%;
+  	border-collapse: collapse;
+  	border: 2px solid #f1f1f1;
+}
+th {
+	text-align: center;
+	padding: 5px;
+	border-bottom: 3px solid #f1f1f1;
+}
+tbody > tr:hover {
+	background-color: #3c1a50;
+	color: snow;
+}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+td {
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid #f1f1f1; /* #ddd */
+}
+/*
+14. nominate_units.jsp
+16. allocate_stakeholders.jsp
+download_assessments.jsp
+show_approved.jsp
+*/
+.clickable:hover { /* MODIFIED on 4May2022: td -> .clickable */
+	background-color: #b30900;
+	color: snow;
+	cursor: pointer;
+}
+/*
+download_assessments.jsp
+*/
+.viewable:hover {
+	background-color: #b30900;
+	color: snow;
+}
+
+
+
+/* class selectors are corresponded to the class attributes */
+
+/*
+1. index.jsp
+*/
+.loginrole {
+	font-size: 1em;
+	cursor: pointer;
+}
+/*
+2. register.jsp
+*/
+.discipline {
+	font-size: 1em;
+	cursor: pointer;
+}
+
+/* id selector */
+/*
+2. register.jsp
+14. nominate_units.jsp
+18. upload_assessments.jsp
+21. check_assessments.jsp
+*/
+#progress { /* Determines the processing icon's size */
+	font-size: 48px;
+	padding: 17px; /* This is set to 17px because the styles (padding 15px + border 2px) in the button selector */
+	margin: 10px; /* This is set to 10px, which is the same as the one in the button selector */
+	vertical-align: middle; /* To align elements in the middle  */
+}
+
+
+
+
+/* Rules for interpage navigation */
+/*
+6. lt.jsp
+7. dh.jsp
+8. nlic.jsp
+9. pr.jsp
+*/
+ul { 
+	display: flex;
+	flex-wrap: nowrap;
+	list-style-type: none;
+	text-align: center;
+	padding-left: 0px;
+}
+li {
+	display: inline-block;
+	padding: 0px 4px 2px 4px;
+	margin: 2px 4px 2px 4px;
+}
+.li_main_menu {
+	width: 100%;
+}
+nav > a {
+	text-decoration: none;
+}
+.main-menu-img:hover {
+	border-radius: 6px; /* ADDED on 20Apr2022 */
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	transform: translateY(-10px);
+	transition-duration: 0.5s;
+}
+.btn_sub_menu {
+	padding: 5px 8px;
+	width: auto;
+}
+
+
+
+
+/*
+12. import.jsp
+*/
+.file:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+/* [CHECKED on 21Apr2022]
+25. update_columns.jsp
+*/
+.check_icon {
+	padding: 15px;
+	margin: 10px;
+}
+
+
+/*
+18. upload_assessments.jsp
+20. download_assessments.jsp
+23. show_approved.jsp
+*/
+
+.caution {
+	color: #cc0000;
+}
+
+/*
+import.jsp
+*/
+.import_file {
+	padding: 10px;
+	width: 50%;
+}
+
+.import_file:hover {
+	padding: 10px;
+	border-radius: 6px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	transform: translateY(-3px);
+	transition-duration: 0.5s;
+	background-color: #3c1a50;
+	color: snow;
+}
+
+/*
+import.jsp
+18. upload_assessments.jsp
+*/
+.generate_file {
+	padding: 10px;
+	width: 100%;
+}
+/*
+import.jsp
+*/
+.generate_file:hover {
+	padding: 10px;
+	border-radius: 6px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	transform: translateY(-3px);
+	transition-duration: 0.5s;
+	background-color: #3c1a50;
+	color: snow;
+}
+
+.download_file:hover {
+	color:snow !important;
+}
+
+/* a class selector with an element type prefix
+	syntax:
+		element-type.class-value {property1: value; property2: value;}
+	e.g.,
+		q.blue {background-color: skyblue;}
+ */
+ 
+ /* ID selectors are used with the id attributes
+ 	#id-value {property1: value; property2: value;}
+ */
+ 
+ /* Child selectors 
+ 	section > h2 {background-color: palegreen;}
+ */
